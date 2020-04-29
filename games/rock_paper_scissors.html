@@ -1,94 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Function scope example</title>
+    <meta charset="utf-8">
+    <title>Game: Rock-Paper-Scissors</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Walter+Turncoat&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+    <div class="wrapper">
+        <header>
+            <h1>Rock, Paper, Scissors!</h1>
+        </header>
+        <main>
+            <header class="instruction-section">
+                <h2>Instructions:</h2>
+                <div class="instruction-list">
+                    <ol>
+                        <li>Rock beats scissors</li>
+                        <li>Scissors beats paper</li>
+                        <li>Paper beats rock</li>
+                    </ol>
+                </div>
+                <h3>Good luck!</h3>
+            </header>
+            <section class="button-container">
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            </section>
 
-  <script>
-
-
-let getRandomInt = function(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
-let computerPlay = function(){
-    let outputSelection = getRandomInt(3);
-    let selectionArray = ['rock', 'paper', 'scissors']
-    let computerSelection = selectionArray[outputSelection];
-    return computerSelection;
-} 
-
-
-let playerPlay = function() {
-    let playerSelection = prompt('Rock, paper, or scissors?', '');
-    return playerSelection;
-}
-
-let computerScore = 0;
-let playerScore = 0;
-
-function showScore() {
-    console.log('My score is: ' + computerScore);
-    console.log('Your score is: ' + playerScore);
-}
-
-
-
-function playRound() {
-    let a = playerPlay();
-    let b = computerPlay(3);
-    console.log('You chose: ' + a);
-    console.log('I chose: ' + b);
-
-    if (a === b) {
-        console.log('It\'s a tie!');
-    } else if (a == 'rock' && b == 'paper') {
-        console.log('Paper beats rock, I win!');
-        computerScore++;
-    } else if (a == 'rock' && b == 'scissors'){
-        console.log('Rock beats scissors, you win!');
-        playerScore++;
-    } else if (a == 'paper' && b == 'rock') {
-        console.log('Paper beats rock, you win!');
-        playerScore++;
-    } else if (a == 'paper' && b == 'scissors') {
-        console.log('Scissors beats paper, I win');
-        computerScore++;
-    } else if (a == 'scissors' && b == 'rock') {
-        console.log('Rock beats scissors, I win!');
-        computerScore++;
-    } else if (a == 'scissors' && b == 'paper') {
-        console.log('Scissors beats paper, you win!');
-        playerScore++;
-    } else {
-        console.log('Whoops, you missed one');
-    }
+        </main>
+    </div>
+    <section class="score-cards">
+        <div class="computer" id="computerScore">
+            <h2>My Score:</h2>
+            <h1 class="cScore"></h1>
+            
+        </div>
+        <div class="player" id="playerScore">
+            <h2>Your Score:</h2>
+            <h1 class="pScore"></h1>
+            
+        </div>
+    </section>
 
 
-    showScore();
-    
-    
-}
 
-
-function playGame() {
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-
-    if (playerScore < computerScore) {
-        console.log('I win, but good game!');
-    } else {
-        console.log('You win, good game!')
-    }
-}
-
-playGame();
-
-
-  </script>
 </body>
+<script type="text/javascript" src="newscript.js"></script>
+
 </html>
