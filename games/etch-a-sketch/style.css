@@ -2,19 +2,20 @@ body {
   margin: 0;
   padding: 0;
   background: #008888;
-  background: -webkit-gradient(linear, left top, right top, from(#008888), to(#003e73));
-  background: linear-gradient(90deg, #008888 0%, #003e73 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#00c8c8), to(#003e73));
+  background: linear-gradient(90deg, #00c8c8 0%, #003e73 100%);
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   color: black;
-  height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr 1fr;
-      grid-template-columns: 1fr 3fr 1fr;
-  -ms-grid-rows: 1fr 1fr 3fr 1fr;
-      grid-template-rows: 1fr 1fr 3fr 1fr;
-  grid-gap: 1rem;
+  -ms-grid-columns: 1fr 75vw 1fr;
+      grid-template-columns: 1fr 75vw 1fr;
+  grid-gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 h1 {
@@ -34,42 +35,42 @@ h3 {
 }
 
 header {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
   margin-top: 2rem;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 0px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
   border-radius: 20px;
   padding: 30px;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2 / 3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 
 .container {
-  border: 1px white solid;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3 / 4;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
+  height: 75vw;
+  border: 1px white solid;
+  background-color: white;
   width: 100%;
-  border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
 }
 
 button {
@@ -77,8 +78,6 @@ button {
   font-size: 16pt;
   font-weight: bold;
   border-radius: 50px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   border: #003e73 2px solid;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
